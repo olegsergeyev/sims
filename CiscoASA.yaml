@@ -1,0 +1,28 @@
+---
+name: Cisco ASA HTTP Simulation
+port: 3303
+version: 0.1.0
+protocol: http
+server:
+  banner: ''
+  response:
+    code: 200
+    text: 'OK'
+    body: ''
+    headers:
+      - key: 'CONTENT-TYPE'
+        value: 'text/html'
+  routes:
+    put: []
+    patch: []
+    options: []
+    head: []
+    post:
+      - vulnerability: 'Upgrade firmware'
+        route: '/api/cmd'
+        response:
+          code: 200
+          text: OK
+          body: ''
+          headers: []
+    get: []
